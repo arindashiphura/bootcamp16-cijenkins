@@ -1,4 +1,5 @@
-name: Java project with Maven
+name: Java Project with Maven
+
 on:
   push:
     branches: ["main", "staging", "testbranch"]
@@ -14,9 +15,9 @@ jobs:
       uses: actions/setup-java@v4
       with:
         java-version: '17'
-        distribution: 'temurin'
-        cache: 'maven'
-    - name: build with Maven
+        distribution: 'temurin' # See 'Supported distributions' for available options
+        cache: maven
+    - name: Build with Maven
       run: mvn -B compile --file pom.xml
 
   test:
